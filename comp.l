@@ -29,25 +29,25 @@ $[a-z] {
   return VAR;
 }
 
-"+" return PLUS;
-"-" return MINUS;
-"*" return TIMES;
-"/" return DIVIDE;
-"%" return MOD;
+"+" 	return PLUS;
+"-" 	return MINUS;
+"*" 	return TIMES;
+"/" 	return DIVIDE;
+"%" 	return MOD;
 
-"(" return LEFT;
-")" return RIGHT;
+"(" 	return LEFT;
+")" 	return RIGHT;
 
-"if" return IF;
-"==" return EQ;
-"=" return ASSIGN;
+"if" 	return IF;
+"==" 	return EQ;
+"=" 	return ASSIGN;
 "endif" return ENDIF;
-"loop" return LOOP;
-"end" return END;
+"loop" 	return LOOP;
+"end" 	return END;
 
-"show" return SHOW;
+"show" 	return SHOW;
 "showx" return SHOWX;
-":" return COLON;
+":" 	return COLON;
 
-"\n" return ENDLN;
-. { return yytext[0]; }
+"\n" 	return ENDLN;
+. { 	return yytext[0]; }
