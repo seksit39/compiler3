@@ -314,7 +314,7 @@ Display:
 %%
 
 void yyerror(const char *s) {
-  cout << "EEK, parse error!  Message: " << s << endl;
+  cout << "ERROR Message: " << s << endl;
   exit(-1);
 }
 
@@ -345,12 +345,16 @@ void stack_print()
 
 
 int main(int argc, const char *argv[]) {
+  printf("%s\n", argv[1]);
   yyin = fopen(argv[1], "r");
   if(yyin == NULL){
      printf("invalid input file\n");
      exit(1);
   }
-  while(yyparse());
+  do { 
+	yyparse();
+  } while(!feof(yyin));
+  //while(yyparse());
 	ofstream myfile;
 	myfile.open ("output.asm");
 
